@@ -60,8 +60,10 @@ app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/reports', reportRoutes);
 
 // Health check
-app.get('/health', (req, res) => {
-  res.json({ status: 'Server is running' });
+app.get('/', (req, res) => {
+  res.json({
+    message: 'AI Finance Tracker API is running',
+  });
 });
 
 // Error handling middleware

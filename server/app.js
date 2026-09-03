@@ -39,6 +39,12 @@ app.use(rateLimit({
   legacyHeaders: false
 }));
 app.use(express.json());
+app.get('/api/health', (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: 'AI Finance Tracker API is running',
+  });
+});
 app.use(express.urlencoded({ extended: true }));
 
 export const connectDB = async () => {
